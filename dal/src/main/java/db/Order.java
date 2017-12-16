@@ -7,22 +7,22 @@ import util.Util;
 import java.util.Date;
 
 @Getter
-public class Crop {
+public class Order {
     private String id;
-    private String code;
-    private String name;
+    private String cropId;
+    private Double quantity;
+    private String priceId;
     private Status status = Status.ACTIVE;
-    private String description;
     private Date createdAt;
     private Date updatedAt;
 
     @Builder
-    public Crop(String code, String name, Status status, String description, Date createdAt, Date updatedAt) {
+    public Order(String cropId, Double quantity, String priceId, Status status, Date createdAt, Date updatedAt) {
         this.id = Util.randomID(10);
-        this.code = code;
-        this.name = name;
+        this.cropId = cropId;
+        this.quantity = quantity;
+        this.priceId = priceId;
         this.status = status;
-        this.description = description;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }

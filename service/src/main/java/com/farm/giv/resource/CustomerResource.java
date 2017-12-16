@@ -1,10 +1,11 @@
 package com.farm.giv.resource;
 
+import com.farm.giv.manager.CustomerManager;
+import com.farm.giv.request.CustomerCreateRequest;
+import com.farm.giv.response.CustomerResponse;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import db.Customer;
 import lombok.extern.slf4j.Slf4j;
-import com.farm.giv.manager.CustomerManager;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -15,14 +16,21 @@ import javax.ws.rs.core.MediaType;
 @Consumes(MediaType.APPLICATION_JSON)
 @Path("/customer")
 public class CustomerResource {
-
-    @Inject
     private CustomerManager customerManager;
 
+    @Inject
+    public CustomerResource(CustomerManager customerManager){
+        this.customerManager = customerManager;
+    }
 
     @Path("/{id}")
     @GET
-    public Customer getCustomer(@PathParam("id")String id){
+    public CustomerResponse getCustomer(@PathParam("id")String id){
         return customerManager.getCustomer(id);
+    }
+
+    @POST
+    public CustomerResponse setCustomer(CustomerCreateRequest request){
+        return customerManager.setCustomer(request);
     }
 }

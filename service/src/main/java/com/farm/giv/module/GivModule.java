@@ -1,10 +1,10 @@
 package com.farm.giv.module;
 
+import com.farm.giv.config.DatabaseConfig;
+import com.farm.giv.config.GivConfig;
 import com.google.inject.*;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import com.farm.giv.config.DatabaseConfig;
-import com.farm.giv.config.GivConfig;
 import dao.CustomerDao;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;

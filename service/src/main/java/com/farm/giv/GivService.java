@@ -1,12 +1,12 @@
 package com.farm.giv;
 
+import com.farm.giv.config.GivConfig;
+import com.farm.giv.module.GivModule;
 import com.google.inject.Stage;
 import com.hubspot.dropwizard.guice.GuiceBundle;
-import com.farm.giv.config.GivConfig;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-import com.farm.giv.module.GivModule;
 import org.glassfish.jersey.logging.LoggingFeature;
 
 import java.util.logging.Level;
